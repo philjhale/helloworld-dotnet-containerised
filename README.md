@@ -46,6 +46,7 @@ docker build . -t dotnet-docker
 docker tag dotnet-docker eu.gcr.io/$PROJECT_ID/dotnet-docker
 docker push eu.gcr.io/$PROJECT_ID/dotnet-docker
 
+# Deploy. All unauthenticated invocations.
 gcloud run deploy dotnet-docker --image=eu.gcr.io/$PROJECT_ID/dotnet-docker --project=$PROJECT_ID --platform=managed --region=europe-west1
 ```
 
